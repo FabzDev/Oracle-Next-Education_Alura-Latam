@@ -1,4 +1,13 @@
+/* * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} */
+
 body {
+}
+
+.principal {
 	background: lightgray;
 }
 
@@ -9,4 +18,24 @@ h1 {
 
 #mision {
 	color: red;
+}
+
+#banner {
+	width: 100%;
+}
+
+.items {
+	font-style: italic;
+}
+
+.diferenciales {
+	background: white;
+}
+
+ul {
+	display: inline-block;
+}
+
+.imagenDiferenciales {
+	width: 50%;
 }
