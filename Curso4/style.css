@@ -4,15 +4,20 @@
 	box-sizing: border-box;
 } */
 
-body {
+.tituloPrincipal {
+	padding-left: 30px;
 }
 
 .principal {
 	background: lightgray;
+	padding: 20px;
 }
 
-p,
-h1 {
+.tituloCentralizado {
+	text-align: center;
+}
+
+p {
 	text-align: center;
 }
 
@@ -30,10 +35,14 @@ h1 {
 
 .diferenciales {
 	background: white;
+	padding: 20px;
 }
 
 ul {
 	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	margin-right: 15%;
 }
 
 .imagenDiferenciales {
