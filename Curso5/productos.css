@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #bbbbbb;
+}
+
+nav li {
+	display: inline;
+	margin-right: 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-size: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
