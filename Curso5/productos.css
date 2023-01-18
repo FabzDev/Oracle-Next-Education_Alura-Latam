@@ -70,6 +70,10 @@ nav a:hover {
 	border: 3px solid green;
 }
 
+.productos li:active h2 {
+	color: green;
+}
+
 .productos h2 {
 	font-size: 30px;
 	font-weight: bold;
@@ -83,4 +87,16 @@ nav a:hover {
 	font-size: 20px;
 	font-weight: bold;
 	margin-top: 10px;
+}
+
+footer {
+	text-align: center;
+	background: url(/imagenes/bg.jpg);
+	padding: 40px;
+}
+
+.copyright {
+	color: white;
+	font-size: 13px;
+	margin: 20px;
 }
