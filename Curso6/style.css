@@ -144,12 +144,19 @@ form label {
 	transform: scale(1.1);
 }
 
-th,
-td {
-	border: 1px solid black;
-	margin: 0;
-	padding: 0;
-}
 table {
-	gap: 0;
+	margin: 40px;
+	border-collapse: collapse;
+}
+
+thead {
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+
+td,
+th {
+	border: 1px solid black;
+	padding: 10px 15px;
 }
