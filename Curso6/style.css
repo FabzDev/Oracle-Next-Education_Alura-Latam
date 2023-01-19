@@ -133,10 +133,13 @@ form label {
 	background: goldenrod;
 	border: none;
 	border-radius: 8px;
+	cursor: pointer;
+	transition: all 300ms;
 }
 
 .enviar:hover {
 	color: goldenrod;
 	background: white;
 	border: 2px solid goldenrod;
+	transform: scale(1.1);
 }
