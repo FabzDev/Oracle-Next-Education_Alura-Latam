@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 } */
 
+body {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
 header {
 	background-color: #bbbbbb;
 	padding: 20px 0;
@@ -182,6 +187,22 @@ th {
 	width: 140px;
 	float: left;
 	margin: 0 20px 20px 0;
+}
+
+.mapa {
+	padding: 3em 0;
+}
+
+.mapa p {
+	margin: 0 0 2em;
+	text-align: center;
+}
+
+.mapa iframe {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	height: 300px;
 }
 
 .imagenDiferenciales {
