@@ -214,6 +214,8 @@ th {
 .diferenciales {
 	padding: 3em 0;
 	background: #88888888;
+	width: 940px;
+	margin: 0 auto;
 }
 
 .contenido-diferenciales {
