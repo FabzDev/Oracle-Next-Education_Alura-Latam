@@ -183,6 +183,10 @@ th {
 	font-weight: 400;
 }
 
+.titulo-principal::first-letter {
+	font-weight: bold;
+}
+
 .principal p {
 	margin: 0 0 1em;
 }
@@ -195,8 +199,7 @@ th {
 
 .mapa {
 	padding: 3em 0;
-	width: 940px;
-	margin: 0 auto;
+	background: linear-gradient(#ffffff, #888888);
 }
 
 .mapa p {
@@ -206,16 +209,14 @@ th {
 
 .mapa iframe {
 	display: block;
-	width: 90%;
+	width: 60%;
 	margin: 0 auto;
 	height: 300px;
 }
 
 .diferenciales {
 	padding: 3em 0;
-	background: #88888888;
-	width: 940px;
-	margin: 0 auto;
+	background: #888888;
 }
 
 .contenido-diferenciales {
@@ -241,10 +242,15 @@ th {
 
 .items {
 	line-height: 2;
+	list-style: none;
 }
 
-.items {
-	list-style: none;
+.items::before {
+	content: "★ ";
+}
+
+.items:first-child:before {
+	content: "☆ ";
 }
 
 .video {
