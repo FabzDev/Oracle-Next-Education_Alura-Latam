@@ -106,10 +106,6 @@ footer {
 	margin: 20px;
 }
 
-main {
-	width: 940px;
-	margin: 0 auto;
-}
 form {
 	margin: 40px 0px;
 }
@@ -172,11 +168,19 @@ th {
 	width: 100%;
 }
 
+.principal {
+	padding: 3em 0;
+	background: #fefefe;
+	width: 940px;
+	margin: 0 auto;
+}
+
 .titulo-principal {
 	text-align: center;
 	font-size: 2em;
 	margin: 0 0 1em;
 	clear: left;
+	font-weight: 400;
 }
 
 .principal p {
@@ -191,6 +195,8 @@ th {
 
 .mapa {
 	padding: 3em 0;
+	width: 940px;
+	margin: 0 auto;
 }
 
 .mapa p {
@@ -204,10 +210,17 @@ th {
 	margin: 0 auto;
 	height: 300px;
 }
+
+.diferenciales {
+	padding: 3em 0;
+	background: #88888888;
+}
+
 .contenido-diferenciales {
 	width: 640px;
 	margin: 0 auto;
 }
+
 .imagen-diferenciales {
 	width: 60%;
 	/* height: 300px; */
