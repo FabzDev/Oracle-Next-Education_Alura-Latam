@@ -12,9 +12,10 @@ public class PruebaMetodos {
 		
 		yuliethCuenta.transferir(1000, fabioCuenta);
 		
-		System.out.println("Saldo Fabio: " + fabioCuenta.saldo);
-		System.out.println("Saldo Yulieth: " + yuliethCuenta.saldo);
-		
+		System.out.println("Saldo Fabio: " + fabioCuenta.getSaldo());
+		System.out.println("Saldo Yulieth: " + yuliethCuenta.getSaldo());
+	
+
 		Cliente fabio = new Cliente();
 		fabio.nombre = "Fabio Escobar";
 		fabio.telefono = "3006336108";
@@ -27,11 +28,17 @@ public class PruebaMetodos {
 		yulieth.documento = "id45695";
 		yuliethCuenta.titular = yulieth;
 		
-		System.out.println(fabioCuenta.titular);
+		System.out.println(fabioCuenta.titular.nombre);
 		System.out.println(fabio);
 		
 		System.out.println(yuliethCuenta.titular);
 		System.out.println(yulieth);
+		
+		fabioCuenta.setAgencia(1323);
+		System.out.println(fabioCuenta.getAgencia());
+		
+		fabioCuenta.setNumero(909623);
+		System.out.println(fabioCuenta.getNumero());
 		
 	}
 	}
