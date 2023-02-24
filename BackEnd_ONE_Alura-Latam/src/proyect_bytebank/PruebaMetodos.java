@@ -2,12 +2,14 @@ package proyect_bytebank;
 
 public class PruebaMetodos {
 	public static void main(String[] args) {
-		Cuenta fabioCuenta = new Cuenta();
+		
+		Cuenta fabioCuenta = new Cuenta(123, 456);
 		fabioCuenta.depositar(791);
 			
+		
 		fabioCuenta.retirar(291);
 		
-		Cuenta yuliethCuenta = new Cuenta();
+		Cuenta yuliethCuenta = new Cuenta(789, 1011);
 		yuliethCuenta.depositar(3000);
 		
 		yuliethCuenta.transferir(1000, fabioCuenta);
@@ -20,25 +22,29 @@ public class PruebaMetodos {
 		fabio.nombre = "Fabio Escobar";
 		fabio.telefono = "3006336108";
 		fabio.documento = "id12395";
-		fabioCuenta.titular = fabio;
+		fabioCuenta.setTitular(fabio);
 		
 		Cliente yulieth= new Cliente();
 		yulieth.nombre = "Yulieth Horta";
 		yulieth.telefono = "3004134656";
 		yulieth.documento = "id45695";
-		yuliethCuenta.titular = yulieth;
+		yuliethCuenta.setTitular(yulieth);
 		
-		System.out.println(fabioCuenta.titular.nombre);
-		System.out.println(fabio);
+		System.out.println(fabioCuenta.getTitular().nombre);
+		System.out.println(fabio.nombre);
 		
-		System.out.println(yuliethCuenta.titular);
-		System.out.println(yulieth);
+		System.out.println(yuliethCuenta.getTitular().nombre);
+		System.out.println(yulieth.nombre);
 		
 		fabioCuenta.setAgencia(1323);
 		System.out.println(fabioCuenta.getAgencia());
 		
 		fabioCuenta.setNumero(909623);
 		System.out.println(fabioCuenta.getNumero());
+		
+		Cuenta alejandroCuenta = new Cuenta(1213, 1415);
+		
+		System.out.println("Se han creado " + Cuenta.getContador() + " cuentas");
 		
 	}
 	}
