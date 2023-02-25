@@ -4,7 +4,7 @@ public class TestBonificacion {
 
 	public static void main(String[] args) {
 		
-		Funcionario fabioFuncionario = new Funcionario();
+		Funcionario fabioFuncionario = new Contador();
 		fabioFuncionario.setSalario(1500);
 		
 		Gerente fabioGerente= new Gerente();
