@@ -13,6 +13,13 @@ public class CuentaAhorros extends Cuenta {
 			double comision = 0.2;
 		return super.retirar(valor + comision);
 		}
+
+
+
+	
+		public void depositar(double valor) {
+			this.saldo += valor;
+		}
 		
 		
 		
