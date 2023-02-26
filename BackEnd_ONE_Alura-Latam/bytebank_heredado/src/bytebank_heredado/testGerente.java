@@ -11,7 +11,7 @@ public class testGerente {
 		System.out.println(fabioManager.getNombre());
 		System.out.println(fabioManager.getDocumento());
 		System.out.println(fabioManager.getSalario());
-		System.out.println("Sesion iniciada: " + fabioManager.autenticar("ONE-Alura"));
+		System.out.println("Sesion iniciada: " + fabioManager.iniciarSesion("ONE-Alura"));
 		System.out.println("Bonificacion mensual: "+fabioManager.getBonificacion());
 		
 		
