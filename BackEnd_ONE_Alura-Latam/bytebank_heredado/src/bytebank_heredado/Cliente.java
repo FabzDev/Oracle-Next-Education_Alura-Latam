@@ -5,10 +5,11 @@ public class Cliente implements Autenticable {
 		String nombre;
 		String documento;
 		String telefono;
-		AutenticarUtil util = new AutenticarUtil();
+		private AutenticarUtil util;
 		
+		//constructor:
 		public Cliente() {
-			AutenticarUtil util = new AutenticarUtil();
+			this.util = new AutenticarUtil();
 		}
 		
 		public String getNombre() {
@@ -33,13 +34,13 @@ public class Cliente implements Autenticable {
 		
 		@Override
 		public void setClave(String clave) {
-			util.setClave(clave);
+			this.util.setClave(clave);
 			
 		}
 		
 		@Override
 		public boolean iniciarSesion(String clave) {
-			return util.iniciarSesion(clave);
+			return this.iniciarSesion(clave);
 		}
 		
 		

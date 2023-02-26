@@ -2,7 +2,12 @@ package bytebank_heredado;
 
 public class Administrador extends Funcionario implements Autenticable {
 	
-	AutenticarUtil util = new AutenticarUtil();
+	private AutenticarUtil util;
+	
+	
+	public Administrador() {
+		this.util = new AutenticarUtil();
+	}
 	
 	@Override
 	public double getBonificacion() {
@@ -13,13 +18,13 @@ public class Administrador extends Funcionario implements Autenticable {
 
 	@Override
 	public void setClave(String clave) {
-		util.setClave(clave);
+		this.util.setClave(clave);
 		
 	}
 	
 	@Override
 	public boolean iniciarSesion(String clave) {
-		return util.iniciarSesion(clave);
+		return this.util.iniciarSesion(clave);
 	}
 
 }

@@ -4,17 +4,19 @@ public abstract class Cuenta {
 	protected double saldo;
 	private int agencia;
 	private int numero;
-//	private Cliente titular;
+	private Cliente titular = new Cliente();
 	private static int contador;
 	
+	//Constructor:
 	public Cuenta(int agencia, int numero) {
 		sumContador();
-//		System.out.println("Cuenta #" + contador);
 		this.agencia = agencia;
 		this.numero = numero;
 	}
 	
-	public abstract void depositar(double valor);
+	public void depositar(double valor) {
+		this.saldo += valor;
+	}
 	
 	public boolean retirar(double valor) {
 		if (this.saldo >= valor) {
@@ -63,13 +65,13 @@ public abstract class Cuenta {
 		return this.numero;
 	}
 	
-//	public void setTitular(Cliente cliente) {
-//		this.titular = cliente;
-//	}
+	public void setTitular(Cliente cliente) {
+		this.titular = cliente;
+	}
 	
-//	public Cliente getTitular() {
-//		return this.titular;
-//	}
+	public Cliente getTitular() {
+		return this.titular;
+	}
 	
 	public static int getContador() {
 		return Cuenta.contador;

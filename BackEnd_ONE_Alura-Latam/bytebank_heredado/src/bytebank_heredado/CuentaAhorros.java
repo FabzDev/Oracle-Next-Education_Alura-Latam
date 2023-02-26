@@ -1,24 +1,23 @@
 package bytebank_heredado;
 
-public class CuentaAhorros extends Cuenta {
-
+public class CuentaAhorros extends Cuenta{
+	
+		private double valorComision =  0.2;
+		
 		public CuentaAhorros(int agencia, int numero) {
 			super(agencia, numero);
 		}
 		
-	
 		
 		@Override
 		public boolean retirar(double valor) {
-			double comision = 0.2;
-		return super.retirar(valor + comision);
+		double nuevoValor = valor + this.valorComision;
+		return super.retirar(nuevoValor);
 		}
 		
-	
-		public void depositar(double valor) {
-			this.saldo += valor;
+		@Override
+		public boolean transferir(double valor, Cuenta cuentaDestino) {
+		return super.transferir(valor, cuentaDestino);
 		}
-		
-		
 		
 }

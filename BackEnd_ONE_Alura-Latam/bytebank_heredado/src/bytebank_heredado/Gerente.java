@@ -10,14 +10,13 @@ public class Gerente extends Funcionario implements Autenticable{
 
 	@Override
 	public void setClave(String clave) {
-		// TODO Auto-generated method stub
+		this.util.setClave(clave);
 		
 	}
 
 	@Override
 	public boolean iniciarSesion(String clave) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.util.iniciarSesion(clave);
 	}
 	
 }
