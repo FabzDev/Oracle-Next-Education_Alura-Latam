@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/fabztech/Cursos-Platzi/alura-cursos/Oracle-Next-Education_Alura-Latam/BackEnd_ONE_Alura-Latam/bytebank_heredado"/>
 			<item value="/home/fabztech/eclipse-workspace"/>
 			<item value="/home/fabztech/Cursos-Platzi/alura-cursos/Oracle-Next-Education_Alura-Latam/BackEnd_ONE_Alura-Latam"/>
 			<item value="/home/fabztech/eclipse-workspace/proyect_bytebank"/>
