@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Tablero pizarra1 = new Tablero(100,100);
-		while (pizarra1.x < 150 && pizarra1.y<150) {
+		while (pizarra1.getX() < 150 && pizarra1.getY()<150) {
 			String movimiento = JOptionPane.showInputDialog("Ingresa la direccion de movimiento");
 			if (movimiento.contentEquals("arriba")) {
 				pizarra1.moverArriba();
