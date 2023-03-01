@@ -36,10 +36,10 @@ public class Atleta {
 	}
 	
 	public String mostrarAtletaGanador() {
-		String mensaje = "\n\nEl atleta ganador es: " 
-							+ this.nombre + "\nNumero de atleta: " + this.numeroAtleta 
-							+ "\nTiempo de carrera: " + this.tiempoCarrera;
-		return mensaje;
+	
+		return "\n\nEl atleta ganador es: " 
+				+ this.nombre + "\nNumero de atleta: " + this.numeroAtleta 
+				+ "\nTiempo de carrera: " + this.tiempoCarrera;
 		
 	}
 
