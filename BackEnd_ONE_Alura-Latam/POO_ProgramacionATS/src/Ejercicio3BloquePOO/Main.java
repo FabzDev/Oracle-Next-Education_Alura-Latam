@@ -47,7 +47,6 @@ public class Main {
 		}
 		
 		indexBarato = carroMasBarato(carros);
-		carros[indexBarato].mostrarDatos();
 		System.out.println(carros[indexBarato].mostrarDatos());
 	}
 }
