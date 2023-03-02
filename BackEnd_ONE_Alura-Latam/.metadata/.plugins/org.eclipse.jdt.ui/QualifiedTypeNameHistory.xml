@@ -3,4 +3,5 @@
     <fullyQualifiedTypeName name="ClasesYObjetos.Persona"/>
     <fullyQualifiedTypeName name="paquete1.Clase1"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
