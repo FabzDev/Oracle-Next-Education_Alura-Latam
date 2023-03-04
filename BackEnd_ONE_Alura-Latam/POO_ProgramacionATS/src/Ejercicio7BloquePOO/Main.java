@@ -109,12 +109,14 @@ public class Main {
 				} else {
 					System.out.println("\nConfirme la candidad de dinero que desea retirar:");
 					double retiro = entrada.nextDouble();
-
-					cuentas[buscador(cuentas, nC)].retirarDinero(retiro);
-					System.out.println("Retiro exitoso");
-					System.out.println("\nSu nuevo saldo es: " + cuentas[buscador(cuentas, nC)].getSaldo());
+					if (retiro >= cuentas[buscador(cuentas, nC)].getSaldo()) {
+						System.out.println("Saldo insuficiente");
+					} else {
+						cuentas[buscador(cuentas, nC)].retirarDinero(retiro);
+						System.out.println("Retiro exitoso");
+						System.out.println("\nSu nuevo saldo es: " + cuentas[buscador(cuentas, nC)].getSaldo());
+					}
 				}
-
 				break;
 
 			}
