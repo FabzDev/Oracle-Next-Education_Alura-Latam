@@ -1,42 +1,40 @@
 package Ejercicio8BloquePOO;
 
 public class Paquete {
-	double numPaquete;
-	double numCedula;
-	double peso;
-	String prioridad;
-	
-	public Paquete(double numPaquete, double numCedula, double peso, String prioridad) {
+	private int numPaquete;
+	private int numCedula;
+	private double peso;
+	private String prioridad;
+
+	public Paquete(int numPaquete, int numCedula, double peso, String prioridad) {
 		this.numPaquete = numPaquete;
 		this.numCedula = numCedula;
 		this.peso = peso;
 		this.prioridad = prioridad;
 	}
-	
-	public double getNumPaquete() {
+
+	public int getNumPaquete() {
 		return numPaquete;
 	}
-	
-	public double getNumCedula() {
+
+	public int getNumCedula() {
 		return numCedula;
 	}
-	
+
 	public double getPeso() {
 		return peso;
 	}
-	
+
 	public String getPrioridad() {
 		return prioridad;
+
 	}
-	
-	public void mostrarDatosPaquete() {
-		System.out.println("La informacion del paquete es: " +
-							"\nNumero de paquete: " + getNumPaquete() +
-							"\nNumero de cedula asociado: " + getNumCedula() +
-							"\nPeso: " + getPeso() +
-							"\nPrioridad: " + getPrioridad()
-		);
+
+	public String mostrarDatosPaquete() {
+		return "\n\nNumero de paquete: " + getNumPaquete() 
+		+ "\nNumero de cedula asociado: " + getNumCedula()
+		+ "\nPeso: " + getPeso() 
+		+ "\nPrioridad: " + getPrioridad();
 	}
-	
-	
+
 }
