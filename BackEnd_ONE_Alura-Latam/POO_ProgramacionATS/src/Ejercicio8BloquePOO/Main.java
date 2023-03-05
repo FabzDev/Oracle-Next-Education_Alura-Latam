@@ -45,6 +45,8 @@ public class Main {
 
 		// Otras variables:
 		int opcion;
+		int sucPaq;
+		int indexSucPaq = 0;
 
 		// Variables sucursal:
 		int numSuc;
@@ -89,23 +91,32 @@ public class Main {
 				break;
 
 			case 2:
-				System.out.println("\n\tIngrese la información del paquete");
-				System.out.println("Numero de referencia del paquete:");
-				numPaq = ent.nextInt();
-				System.out.println("Número de cédula del remitente:");
-				numCed = ent.nextInt();
-				System.out.println("Peso:");
-				peso = ent.nextDouble();
-				do {
-					System.out.println("Prioridad (1: Estandar. 2: Alta, 3: Express): ");
-					prio = ent.nextInt();
-						
-				} while (prio != 1 && prio != 2 && prio != 3);
-				paquetes[contPaq] = new Paquete(numPaq, numCed, peso, prio);
-				System.out.println(paquetes[contPaq].mostrarDatosPaquete());
-				sucursales[contSuc-1].calcularPrecio(paquetes[contPaq]);
-				
-				contPaq++;
+				System.out.println("Digite el numero de la sucursal que utilizará para realizar el envio");
+				sucPaq = ent.nextInt();
+				indexSucPaq = buscarSucursal(sucursales, sucPaq, contSuc);
+
+				if (indexSucPaq == -1) {
+					System.out.println("\nEl numero de sucursal no es valido");
+				} else {
+					System.out.println("\n\tIngrese la información del paquete");
+					System.out.println("Numero de referencia del paquete:");
+					numPaq = ent.nextInt();
+					System.out.println("Número de cédula del remitente:");
+					numCed = ent.nextInt();
+					System.out.println("Peso:");
+					peso = ent.nextDouble();
+					do {
+						System.out.println("Prioridad (1: Estandar. 2: Alta, 3: Express): ");
+						prio = ent.nextInt();
+
+					} while (prio != 1 && prio != 2 && prio != 3);
+					paquetes[contPaq] = new Paquete(numPaq, numCed, peso, prio);
+
+					System.out.println(paquetes[contPaq].mostrarDatosPaquete());
+					System.out.println(sucursales[contSuc - 1].calcularPrecio(paquetes[contPaq]));
+
+					contPaq++;
+				}
 				break;
 
 			case 3:
@@ -119,24 +130,43 @@ public class Main {
 				} else {
 
 					System.out.println(sucursales[indexSuc].mostrarDatosSucursal());
-					
+
 				}
 				break;
-				
+
 			case 4:
 				System.out.println("\n\tDigite el número de paquete:");
 				numPaq = ent.nextInt();
 
 				indexPaq = buscarPaquete(paquetes, numPaq, contPaq);
-				
+
 				if (indexPaq == -1) {
 					System.out.println("El paquete ingresado no existe");
 				} else {
 					System.out.println(paquetes[indexPaq].mostrarDatosPaquete());
-					
+
 				}
 				break;
 
+			case 5:
+				if (contSuc <= 0) {
+					System.out.println("\nAún no existen sucursales");
+				} else {
+					for (int i = 0; i < contSuc; i++) {
+						System.out.println(sucursales[i].mostrarDatosSucursal());
+					}
+				}
+				break;
+			case 6:
+				if (contPaq <= 0) {
+					System.out.println("\nAún no existen paquetes");
+				} else {
+				for (int i = 0; i < contPaq; i++) {
+					System.out.println(paquetes[i].mostrarDatosPaquete());
+				}}
+				break;
+			default:
+				System.out.println("\nOpcion invalida, por favor intentelo nuevamente");
 			}
 
 		} while (opcion != 7);
