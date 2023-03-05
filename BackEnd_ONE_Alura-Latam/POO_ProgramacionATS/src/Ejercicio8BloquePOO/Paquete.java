@@ -4,9 +4,9 @@ public class Paquete {
 	private int numPaquete;
 	private int numCedula;
 	private double peso;
-	private String prioridad;
+	private int prioridad;
 
-	public Paquete(int numPaquete, int numCedula, double peso, String prioridad) {
+	public Paquete(int numPaquete, int numCedula, double peso, int prioridad) {
 		this.numPaquete = numPaquete;
 		this.numCedula = numCedula;
 		this.peso = peso;
@@ -25,7 +25,7 @@ public class Paquete {
 		return peso;
 	}
 
-	public String getPrioridad() {
+	public int getPrioridad() {
 		return prioridad;
 
 	}
