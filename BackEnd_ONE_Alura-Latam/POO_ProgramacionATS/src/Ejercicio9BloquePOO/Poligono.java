@@ -1,40 +1,17 @@
 package Ejercicio9BloquePOO;
 
 public abstract class Poligono {
-	private double base;
-	private double altura;
+	private int nlados;
 
-	public Poligono(double base, double altura) {
-		this.base = base;
-		this.altura = altura;
+	public Poligono(int nlados) {
+		this.nlados = nlados;
 	}
 
-	public double getBase() {
-		return base;
-	}
-
-	public double getAltura() {
-		return altura;
-	}
+	public int getnLados() {
+		return nlados;
+	};
 
 	public abstract double calcArea();
 
-	public void mostrarDatos(int i, String figura) {
-		System.out.println("\n\nDatos "+figura+" # "+ (i+1) +" \nBase: " + base + "\nAltura: " +altura + "\nArea: " + calcArea());
-	};
+	public abstract String toString();
 }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//areaCuadrado = b * h;
-//areaTriangulo = (b * h)/2

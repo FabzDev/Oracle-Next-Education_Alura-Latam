@@ -8,8 +8,9 @@ public class Main {
 		Scanner ent = new Scanner(System.in);
 		// Variables:
 		int opcion;
-		double base;
-		double altura;
+		double lado1;
+		double lado2;
+		double lado3;
 
 		// Variables triangulo:
 		
@@ -33,38 +34,41 @@ public class Main {
 			switch (opcion) {
 			
 			case 1:
-				System.out.println("\nIngrese el valor de la base (cm): ");
-				base = ent.nextDouble();
+				System.out.println("\nIngrese el valor del lado #1 (cm): ");
+				lado1 = ent.nextDouble();
 
-				System.out.println("\nIngrese el valor de la altura (cm):");
-				altura = ent.nextDouble();
-
-				triangulos[contTri] = new Triangulo(base, altura);
+				System.out.println("\nIngrese el valor del lado #2 (cm): ");
+				lado2 = ent.nextDouble();
+				
+				System.out.println("\nIngrese el valor del lado #3 (cm): ");
+				lado3 = ent.nextDouble();
+				
+				triangulos[contTri] = new Triangulo(3, lado1, lado2, lado3);
 				contTri++;
 				break;
 			
 			case 2:
-				System.out.println("\nIngrese el valor de la base (cm): ");
-				base = ent.nextDouble();
+				System.out.println("\nIngrese el valor del lado #1 (cm): ");
+				lado1 = ent.nextDouble();
 
-				System.out.println("\nIngrese el valor de la altura (cm):");
-				altura = ent.nextDouble();
+				System.out.println("\nIngrese el valor del lado #2 (cm): ");
+				lado2 = ent.nextDouble();
 
-				rectangulos[contRec] = new Rectangulo(base, altura);
+				rectangulos[contRec] = new Rectangulo(4, lado1, lado2);
 				contRec++;
 				break;
 
 			case 3:
 				for (int i = 0; i < contTri; i++) {
 
-					triangulos[i].mostrarDatos(i, "triangulo");
+					triangulos[i].toString();
 				}
 				break;
 			
 			case 4:
 				for (int i = 0; i < contRec; i++) {
 
-					rectangulos[i].mostrarDatos(i, "rectangulo");
+					rectangulos[i].toString();
 				}
 				break;
 				
