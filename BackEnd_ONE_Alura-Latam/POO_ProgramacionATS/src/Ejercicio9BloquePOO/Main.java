@@ -1,5 +1,6 @@
 package Ejercicio9BloquePOO;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,14 +13,14 @@ public class Main {
 		double lado2;
 		double lado3;
 
-		// Variables triangulo:
+		// Variables triangulo:	
 		
-		Poligono triangulos[] = new Triangulo[10];
-		int contTri = 0;
+		ArrayList<Poligono> triangulos = new ArrayList<Poligono>();
+		
 
 		// Variables rectangulo:
-		Poligono rectangulos[] = new Rectangulo[10];
-		int contRec = 0;
+		ArrayList<Poligono> rectangulos = new ArrayList<Poligono>();
+		
 
 		do {
 			System.out.println("\n\nMenu");
@@ -43,8 +44,9 @@ public class Main {
 				System.out.println("\nIngrese el valor del lado #3 (cm): ");
 				lado3 = ent.nextDouble();
 				
-				triangulos[contTri] = new Triangulo(3, lado1, lado2, lado3);
-				contTri++;
+				Triangulo triangulo= new Triangulo(lado1, lado2, lado3);
+				triangulos.add(triangulo);
+//				contTri++;
 				break;
 			
 			case 2:
@@ -54,21 +56,20 @@ public class Main {
 				System.out.println("\nIngrese el valor del lado #2 (cm): ");
 				lado2 = ent.nextDouble();
 
-				rectangulos[contRec] = new Rectangulo(4, lado1, lado2);
-				contRec++;
+				Rectangulo rectangulo = new Rectangulo(lado1, lado2);
+				rectangulos.add(rectangulo); 
 				break;
 
 			case 3:
-				for (int i = 0; i < contTri; i++) {
-
-					triangulos[i].toString();
+				for(Poligono poli: triangulos) {
+					System.out.println(poli.toString());
 				}
 				break;
 			
 			case 4:
-				for (int i = 0; i < contRec; i++) {
-
-					rectangulos[i].toString();
+				for (Poligono poli: rectangulos) {
+					System.out.println(poli.toString());
+					
 				}
 				break;
 				
