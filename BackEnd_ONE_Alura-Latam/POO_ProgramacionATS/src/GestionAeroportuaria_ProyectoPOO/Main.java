@@ -1,5 +1,10 @@
 package GestionAeroportuaria_ProyectoPOO;
 
-public class Main {
+import java.util.ArrayList;
 
+public class Main {
+	public static void main(String[] args) {
+		ArrayList <Pasajero> pasagero1 = new ArrayList <Pasajero> ();
+		
+	}
 }
