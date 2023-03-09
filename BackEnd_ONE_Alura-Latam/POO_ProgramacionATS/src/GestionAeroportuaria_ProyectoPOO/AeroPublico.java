@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class AeroPublico extends Aeropuerto {
 
-	private double suvencion;
+	private double subvencion;
 	
-	public AeroPublico(String nombre, String ciudad, String pais, ArrayList<Aerolinea> aerolineas, double suvencion) {
+	public AeroPublico(String nombre, String ciudad, String pais, ArrayList<Aerolinea> aerolineas, double subvencion) {
 		super(nombre, ciudad, pais, aerolineas);
-		this.suvencion = suvencion;
+		this.subvencion = subvencion;
 	}
 
 }
