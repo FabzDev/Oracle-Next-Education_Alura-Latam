@@ -6,16 +6,19 @@ public class Aeropuerto {
 	private String nombreAereopuerto;
 	private String ciudad;
 	private String pais;
+	private String tipo;
 	
 	private ArrayList <Aerolinea> aerolineas = new ArrayList<Aerolinea>();
 	
 	
-	public Aeropuerto(String nombre, String ciudad, String pais, ArrayList<Aerolinea> aerolineas) {
+	public Aeropuerto(String nombre, String ciudad, String pais, String tipo,ArrayList<Aerolinea> aerolineas) {
 		this.nombreAereopuerto = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
 		this.aerolineas = aerolineas;
 	}
+	
+	//insertarcompañia
 	
 	public void showAerolineas(Aerolinea aerolines[]) {
 		for(Aerolinea aeroline: aerolines) {
@@ -26,6 +29,3 @@ public class Aeropuerto {
 	
 	
 }
-
-
-//for (Poligono poli: rectangulos) {

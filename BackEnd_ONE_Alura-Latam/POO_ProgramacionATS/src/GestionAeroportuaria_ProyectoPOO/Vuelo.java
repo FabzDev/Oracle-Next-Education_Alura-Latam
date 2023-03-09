@@ -1,13 +1,16 @@
 package GestionAeroportuaria_ProyectoPOO;
 
+import java.util.ArrayList;
+
 public class Vuelo {
 	int vueloID;
 	String origin;
 	String destino;
 	double precio;
 	int maxPasajeros;
+	ArrayList<Pasajero> pasajeros;
 	
-	public Vuelo(int vueloID, String origin, String destino, double precio, int maxPasajeros) {
+	public Vuelo(int vueloID, String origin, String destino, double precio, int maxPasajeros, ArrayList<Pasajero> pasajeros) {
 		this.vueloID = vueloID;
 		this.origin = origin;
 		this.destino = destino;
@@ -19,6 +22,8 @@ public class Vuelo {
 		return vueloID;
 	}
 
+	//insertarPasajero
+	
 	public String getOrigin() {
 		return origin;
 	}
@@ -34,6 +39,12 @@ public class Vuelo {
 	public int showMaxPasajeros() {
 		return maxPasajeros;
 	}
+	
+	//numActualPasajeros
+	
+	// getPasajero(i)
+	
+	// getPasajero(String)
 	
 	
 	

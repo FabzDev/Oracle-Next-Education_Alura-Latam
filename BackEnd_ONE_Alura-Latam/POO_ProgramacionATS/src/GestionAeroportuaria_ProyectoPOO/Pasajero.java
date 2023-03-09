@@ -4,13 +4,11 @@ public class Pasajero {
 	private String nombrePasajero;
 	private int pasaporte;
 	private String nacionalidad;
-	private Vuelo vuelo;
 	
-	public Pasajero(String nombrePasajero, int pasaporte, String nacionalidad, Vuelo vuelo) {
+	public Pasajero(String nombrePasajero, int pasaporte, String nacionalidad) {
 		this.nombrePasajero = nombrePasajero;
 		this.pasaporte = pasaporte;
 		this.nacionalidad = nacionalidad;
-		this.vuelo = vuelo;
 		
 	}
 	
@@ -24,6 +22,12 @@ public class Pasajero {
 	
 	public String getNacionalidad() {
 		return nacionalidad;
+	}
+
+	@Override
+	public String toString() {
+		return "Pasajero: " + nombrePasajero + ", \nNumero de pasaporte: " + pasaporte + ", \nNacionalidad: "
+				+ nacionalidad + "\n";
 	}
 	
 	

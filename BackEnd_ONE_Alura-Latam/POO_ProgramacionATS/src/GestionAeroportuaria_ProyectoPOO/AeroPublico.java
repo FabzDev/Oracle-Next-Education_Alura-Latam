@@ -6,8 +6,8 @@ public class AeroPublico extends Aeropuerto {
 
 	private double subvencion;
 	
-	public AeroPublico(String nombre, String ciudad, String pais, ArrayList<Aerolinea> aerolineas, double subvencion) {
-		super(nombre, ciudad, pais, aerolineas);
+	public AeroPublico(String nombre, String ciudad, String pais, double subvencion, ArrayList<Aerolinea> aerolineas) {
+		super(nombre, ciudad, pais, pais, aerolineas);
 		this.subvencion = subvencion;
 	}
 

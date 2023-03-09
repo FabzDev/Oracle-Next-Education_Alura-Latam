@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class AeroPrivado extends Aeropuerto {
 
-	public AeroPrivado(String nombre, String ciudad, String pais, ArrayList<Aerolinea> aerolineas) {
-		super(nombre, ciudad, pais, aerolineas);
+	public AeroPrivado(String nombre, String ciudad, String pais, double subvencion, ArrayList<Aerolinea> aerolineas) {
+		super(nombre, ciudad, pais, pais, aerolineas);
 	}
 
 	
