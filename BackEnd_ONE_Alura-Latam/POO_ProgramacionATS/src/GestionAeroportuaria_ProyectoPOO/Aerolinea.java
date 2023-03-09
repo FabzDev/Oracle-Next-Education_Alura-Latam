@@ -16,6 +16,8 @@ public class Aerolinea {
 		this.vuelos.add(vuelos);
 		
 	}
+	
+	public Aerolinea() {}
 
 	public void insertarVuelo(Vuelo vuelo) {
 		vuelos.add(vuelo);
