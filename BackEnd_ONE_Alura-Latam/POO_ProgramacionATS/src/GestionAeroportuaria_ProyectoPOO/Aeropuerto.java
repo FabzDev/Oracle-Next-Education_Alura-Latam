@@ -12,9 +12,16 @@ public class Aeropuerto {
 		this.nombreAereopuerto = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
-		this.aerolineas = new ArrayList<Aerolinea>();
 	}
 	
+	public Aeropuerto(String nombreAereopuerto, String ciudad, String pais, ArrayList<Aerolinea> aerolineas) {
+		super();
+		this.nombreAereopuerto = nombreAereopuerto;
+		this.ciudad = ciudad;
+		this.pais = pais;
+		this.aerolineas = aerolineas;
+	}
+
 	public void insertarAerolinea(Aerolinea aerolinea) {
 		aerolineas.add(aerolinea);
 	}
