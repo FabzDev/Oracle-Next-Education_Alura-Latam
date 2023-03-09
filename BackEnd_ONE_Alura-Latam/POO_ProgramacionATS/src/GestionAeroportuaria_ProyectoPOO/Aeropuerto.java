@@ -6,36 +6,39 @@ public class Aeropuerto {
 	private String nombreAereopuerto;
 	private String ciudad;
 	private String pais;
-	private String tipo;
-
 	private ArrayList<Aerolinea> aerolineas = new ArrayList<Aerolinea>();
 
-	public Aeropuerto(String nombre, String ciudad, String pais, String tipo, ArrayList<Aerolinea> aerolineas) {
+	public Aeropuerto(String nombre, String ciudad, String pais) {
 		this.nombreAereopuerto = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
-		this.aerolineas = aerolineas;
+		this.aerolineas = new ArrayList<Aerolinea>();
 	}
-
+	
 	public void insertarAerolinea(Aerolinea aerolinea) {
 		aerolineas.add(aerolinea);
 	}
-
-	public void showAerolineas(Aerolinea aerolines[]) {
-		for (Aerolinea aeroline : aerolines) {
-			System.out.println(aeroline.getNombreAerolinea());
-		}
-
+	
+	public String getNombreAereopuerto() {
+		return nombreAereopuerto;
 	}
 
-	public int getCantAerolineas() {
-		return aerolineas.size();
-	};
+	public String getCiudad() {
+		return ciudad;
+	}
 
+	public String getPais() {
+		return pais;
+	}
+
+	public ArrayList<Aerolinea> getAerolineas() {
+		return aerolineas;
+	}
+	
 	public Aerolinea getAerolinea(int index) {
 		return aerolineas.get(index);
 	}
-
+	
 	public Aerolinea getAerolinea(String nombre) {
 		Aerolinea encontrado = new Aerolinea();
 		for(Aerolinea aerolinea:aerolineas) {
@@ -44,9 +47,18 @@ public class Aeropuerto {
 			}
 		}
 		return encontrado;
-		
-
 	}
+	
+
+
+
+	
+
+	
+
+	
+	
+	
 	
 
 }
