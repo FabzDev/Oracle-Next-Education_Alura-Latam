@@ -5,6 +5,10 @@ public class Pasajero {
 	private int pasaporte;
 	private String nacionalidad;
 	
+	
+	public Pasajero() {
+	}
+	
 	public Pasajero(String nombrePasajero, int pasaporte, String nacionalidad) {
 		this.nombrePasajero = nombrePasajero;
 		this.pasaporte = pasaporte;

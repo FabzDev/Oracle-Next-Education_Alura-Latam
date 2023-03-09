@@ -18,7 +18,7 @@ public class Aeropuerto {
 		this.aerolineas = aerolineas;
 	}
 	
-	//insertarcompañia
+	//insertaraerolinea
 	
 	public void showAerolineas(Aerolinea aerolines[]) {
 		for(Aerolinea aeroline: aerolines) {
@@ -27,5 +27,12 @@ public class Aeropuerto {
 		
 	}
 	
+	//obteneraerolineas
+	
+	//getcantidadAerolineas
+	
+	//obteneraerolinea (index)
+	
+	//obteneraerolinea (nombre)
 	
 }

@@ -5,32 +5,42 @@ import java.util.ArrayList;
 public class Aerolinea {
 	private String nombreAerolinea;
 	private ArrayList <Vuelo> vuelos = new ArrayList<>(); 
-	private String idVuelo;	
+	private int cantVuelos = vuelos.size();
 	
 	public Aerolinea(String nombreAerolinea) {
 		this.nombreAerolinea = nombreAerolinea;
 	}
-
 	
-	public Aerolinea(String nombreAerolinea, int idVuelo) {
+	public Aerolinea(String nombreAerolinea, Vuelo vuelos) {
 		this.nombreAerolinea = nombreAerolinea;
-		this.idVuelo = idVuelo;
+		this.vuelos.add(vuelos);
+		
 	}
 
-	//insertarVuelo
+	public void insertarVuelo(Vuelo vuelo) {
+		vuelos.add(vuelo);
+	}
 		
 	public String getNombreAerolinea() {
 		return nombreAerolinea;
 	}
 	
-	//getNumerodeVuelos
-	
-	public int getNumVuelo(int indexVuelo) {
-		//TO DO
+	public int getCantVuelos() {
+		return cantVuelos;
 	}
 	
-	public int getNumVuelo(String idVuelo) {
-		//TO DO
+	public Vuelo getNumVueloIndex(int indexVuelo) {
+		return vuelos.get(indexVuelo);
+	}
+	
+	public Vuelo getNumVuelo(String idVuelo) {
+		Vuelo encontrado = new Vuelo();
+		for(Vuelo vuelo:vuelos) {
+			if(vuelo.getVueloID() == idVuelo) {
+				encontrado = vuelo;
+			}
+		}
+		return encontrado;
 	}
 	
 	
