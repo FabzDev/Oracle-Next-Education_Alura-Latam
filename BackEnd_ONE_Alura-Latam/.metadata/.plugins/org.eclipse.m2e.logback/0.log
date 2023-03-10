@@ -29,3 +29,5 @@
 2023-03-09 15:22:03,940 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2023-03-09 15:22:58,314 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2023-03-09 19:06:38,115 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-03-09 19:09:26,600 [Worker-8: Fetching remote refs from git@github.com:FabzDev/Oracle-Next-Education_Alura-Latam.git] INFO  o.a.s.c.u.s.e.EdDSASecurityProviderRegistrar - getOrCreateProvider(EdDSA) created instance of net.i2p.crypto.eddsa.EdDSASecurityProvider
+2023-03-09 19:09:26,714 [Worker-8: Fetching remote refs from git@github.com:FabzDev/Oracle-Next-Education_Alura-Latam.git] INFO  o.a.s.c.i.DefaultIoServiceFactoryFactory - No detected/configured IoServiceFactoryFactory; using Nio2ServiceFactoryFactory
