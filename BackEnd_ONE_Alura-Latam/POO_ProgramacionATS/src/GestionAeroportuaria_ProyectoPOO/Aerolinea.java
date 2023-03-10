@@ -31,11 +31,11 @@ public class Aerolinea {
 		return cantVuelos;
 	}
 	
-	public Vuelo getNumVueloIndex(int indexVuelo) {
+	public Vuelo getVueloIndex(int indexVuelo) {
 		return vuelos.get(indexVuelo);
 	}
 	
-	public Vuelo getNumVuelo(String idVuelo) {
+	public Vuelo getVuelo(String idVuelo) {
 		Vuelo encontrado = new Vuelo();
 		for(Vuelo vuelo:vuelos) {
 			if(vuelo.getVueloID() == idVuelo) {
