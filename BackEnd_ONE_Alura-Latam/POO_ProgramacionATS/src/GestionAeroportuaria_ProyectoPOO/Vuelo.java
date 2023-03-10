@@ -9,7 +9,7 @@ public class Vuelo {
 	private double precio;
 	private int actPasajeros;
 	private ArrayList <Pasajero> pasajeros;
-	private int maxPasajeros = pasajeros.size();
+	private int maxPasajeros;
 	
 	public Vuelo(String vueloID, String origin, String destino, double precio, int maxPasajeros) {
 		this.vueloID = vueloID;
@@ -17,15 +17,15 @@ public class Vuelo {
 		this.destino = destino;
 		this.precio = precio;
 		this.maxPasajeros = maxPasajeros;
-		this.actPasajeros = 0;
-		this.pasajeros = new ArrayList<Pasajero>();
+		this.pasajeros = new ArrayList <Pasajero> ();
+		this.actPasajeros = pasajeros.size();
 	}
 	
 	public Vuelo() {}
 
 	
 	public void insertarPasajero(Pasajero pasajero) {
-		this.pasajeros.add(pasajero);
+		pasajeros.add(pasajero);
 		System.out.println("Ingreso de pasajero exitoso");
 	}
 	

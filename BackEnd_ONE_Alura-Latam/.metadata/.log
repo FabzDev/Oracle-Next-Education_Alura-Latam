@@ -9588,3 +9588,79 @@ Binding(ALT+SHIFT+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface.text 4 0 2023-03-10 01:46:36.551
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.NullPointerException: Cannot read field "sourceStart" because "firstNode" is null
+	at org.eclipse.jdt.internal.codeassist.select.SelectionParser.attachOrphanCompletionNode(SelectionParser.java:160)
+	at org.eclipse.jdt.internal.codeassist.select.SelectionParser.updateRecoveryState(SelectionParser.java:1764)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.resumeOnSyntaxError(Parser.java:14536)
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:13055)
+	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:2100)
+	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:1940)
+	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:349)
+	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:312)
+	at org.eclipse.jdt.internal.codeassist.SelectionEngine.select(SelectionEngine.java:1081)
+	at org.eclipse.jdt.internal.core.Openable.codeSelect(Openable.java:167)
+	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:389)
+	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:382)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractJavaEditorTextHover.getJavaElementsAt(AbstractJavaEditorTextHover.java:121)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:662)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.debug.core 4 125 2023-03-10 02:00:08.107
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:172)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:307)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:382)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:367)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+!ENTRY org.eclipse.debug.core 4 125 2023-03-10 02:00:08.130
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:172)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:307)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:382)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:367)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+!ENTRY org.eclipse.debug.core 4 125 2023-03-10 02:00:08.158
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:172)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:307)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:382)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:367)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+!ENTRY org.eclipse.debug.core 4 125 2023-03-10 02:00:08.174
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:172)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:307)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:382)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:367)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1589)

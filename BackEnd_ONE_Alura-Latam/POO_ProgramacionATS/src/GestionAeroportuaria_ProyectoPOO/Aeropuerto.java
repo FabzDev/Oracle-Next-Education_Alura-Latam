@@ -13,7 +13,7 @@ public class Aeropuerto {
 		this.ciudad = ciudad;
 		this.pais = pais;
 	}
-	
+
 	public Aeropuerto(String nombreAereopuerto, String ciudad, String pais, ArrayList<Aerolinea> aerolineas) {
 		super();
 		this.nombreAereopuerto = nombreAereopuerto;
@@ -25,7 +25,7 @@ public class Aeropuerto {
 	public void insertarAerolinea(Aerolinea aerolinea) {
 		aerolineas.add(aerolinea);
 	}
-	
+
 	public String getNombreAereopuerto() {
 		return nombreAereopuerto;
 	}
@@ -41,31 +41,25 @@ public class Aeropuerto {
 	public ArrayList<Aerolinea> getAerolineas() {
 		return aerolineas;
 	}
-	
+
 	public Aerolinea getAerolinea(int index) {
 		return aerolineas.get(index);
 	}
-	
+
 	public Aerolinea getAerolinea(String nombre) {
 		Aerolinea encontrado = new Aerolinea();
-		for(Aerolinea aerolinea:aerolineas) {
-			if(aerolinea.getNombreAerolinea() == nombre) {
+		for (Aerolinea aerolinea : aerolineas) {
+			if (aerolinea.getNombreAerolinea() == nombre) {
 				encontrado = aerolinea;
 			}
 		}
 		return encontrado;
 	}
-	
 
-
-
-	
-
-	
-
-	
-	
-	
-	
-
+	@Override
+	public String toString() {
+		return "Nombre del aereopuerto: " + nombreAereopuerto +", ciudad:" + ciudad + ", pais:" + pais + ", aerolineas:"
+				+ aerolineas + "]";
+	}
+//PENDING!
 }

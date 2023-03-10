@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-	Scanner ent = new Scanner(System.in);
+	static Scanner ent = new Scanner(System.in);
 	static ArrayList <Aeropuerto> aeropuertos = new ArrayList<>();
 	
 	public static void main(String[] args) {
-	
+		insertarDatosAeropuertos();
+		desplegarMenu();
 	}
 	
 	public static void insertarDatosAeropuertos() {
@@ -30,8 +31,9 @@ public class Main {
 		aeropuertos.add(new AeroPrivado("El Dorado", "Bogotá", "Colombia"));
 		String [] empresas = {"Apple", "Alibaba", "Amazon"};
 		((AeroPrivado) aeropuertos.get(1)).insertarEmpresas(empresas);
+		aeropuertos.get(1).insertarAerolinea(new Aerolinea("Ultra"));
 		aeropuertos.get(1).getAerolinea("Ultra").insertarVuelo(new Vuelo("UA2320", "Bogotá", "Cartagena", 260_000, 110));
-		aeropuertos.get(1).getAerolinea("Ultra").getVuelo("UA2320").insertarPasajero(new Pasajero("Felipe Noriega", 114006, "Colombiano"));
+		aeropuertos.get(1).getAerolinea("Ultra").getVuelo("UA2320").insertarPasajero(new Pasajero("Marcsla Vidalgo", 114910, "Argentiga"));
 		
 		
 		aeropuertos.add(new AeroPublico("Ernesto Cortizos", "Barranquilla", "Colombia", 60_000_000));
@@ -47,5 +49,58 @@ public class Main {
 		aeropuertos.get(2).getAerolinea("Viva Air").insertarVuelo(new Vuelo("VR2350", "Cartagena", "Cali", 180_000, 110));
 		aeropuertos.get(2).getAerolinea("Viva Air").insertarVuelo(new Vuelo("WO2351", "Cartagena", "Bucaramanga", 190_000, 110));
 		aeropuertos.get(2).getAerolinea("Viva Air").getVuelo("VR2350").insertarPasajero(new Pasajero("Paola Vergara", 114012, "Colombiana"));
+	}
+	
+	public static void desplegarMenu() {
+		int opcion;
+		
+		do {
+			System.out.println("\n\t.:MENU:.");
+			System.out.println("1. Consultar Aeropuertos");
+			System.out.println("2. Consultar empresas patrocinadoras (aeropuerto privado)");
+			System.out.println("3. Consultar subvención gubernamental (aeropuerto público)");
+			System.out.println("4. Consultar aerolineas por aeropuerto");
+			System.out.println("5. Consultar vuelos por aerolinea y aeropuerto");
+			System.out.println("6. Consultar trayecto");
+			System.out.println("7. Salir");
+			System.out.println("\nDigite la opción deseada:");
+			opcion = ent.nextInt();
+			
+			
+			switch (opcion) {
+
+			case 1:
+				// Consultar aeropuertos
+				for (Aeropuerto aeropuerto:aeropuertos) {
+					System.out.println(aeropuerto.toString());
+				}
+				break;
+
+			case 2:
+				// Consultar patrocinadores
+				break;
+
+			case 3:
+				// Consultar subvencion
+				break;
+
+			case 4:
+				// Consultar aerolineas
+				break;
+
+			case 5:
+				// Consultar vuelos
+				break;
+
+			case 6:
+				// Consultar trayecto
+				break;
+
+			case 7:
+				break;
+
+			}
+		} while (opcion != 7);
+
 	}
 }
