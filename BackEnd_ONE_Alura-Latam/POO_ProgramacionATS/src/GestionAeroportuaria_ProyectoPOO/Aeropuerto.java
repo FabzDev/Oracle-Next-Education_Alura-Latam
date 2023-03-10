@@ -58,8 +58,16 @@ public class Aeropuerto {
 
 	@Override
 	public String toString() {
-		return "Nombre del aereopuerto: " + nombreAereopuerto +", ciudad:" + ciudad + ", pais:" + pais + ", aerolineas:"
-				+ aerolineas + "]";
+		return "\nAereopuerto: " + nombreAereopuerto +"\nCiudad: " + ciudad + "\nPaís: " + pais + "\nAerolineas: "
+				+ testString(aerolineas);
+	}
+	
+	public ArrayList <String> testString(ArrayList <Aerolinea> aerolines) {
+		ArrayList <String> aerolineList = new ArrayList<String>();
+		for(Aerolinea aeroline: aerolines) {
+			aerolineList.add(aeroline.getNombreAerolinea());
+		}
+		return aerolineList;
 	}
 //PENDING!
 }

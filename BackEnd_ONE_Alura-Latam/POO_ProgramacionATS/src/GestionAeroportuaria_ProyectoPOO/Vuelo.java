@@ -25,8 +25,8 @@ public class Vuelo {
 
 	
 	public void insertarPasajero(Pasajero pasajero) {
-		pasajeros.add(pasajero);
-		System.out.println("Ingreso de pasajero exitoso");
+//		pasajeros.add(pasajero);
+//		System.out.println("Ingreso de pasajero exitoso");
 	}
 	
 	public String getVueloID() {
