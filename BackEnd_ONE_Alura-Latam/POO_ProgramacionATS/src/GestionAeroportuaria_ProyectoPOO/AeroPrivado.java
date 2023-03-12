@@ -27,12 +27,19 @@ public class AeroPrivado extends Aeropuerto {
 		this.numEmpresas++;
 	}
 
-	public String[] getEmpresas() {
-		return empresas;
+	public String getEmpresas() {
+		return String.join(", ", empresas);
 	}
 
 	public int getNumEmpresas() {
 		return numEmpresas;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "\nNombre: " + super.getNombreAereopuerto() +"\nCiudad: " + super.getCiudad() + "\nPaís: " + super.getPais() + "\nAerolineas: "
+				+ super.aerolinesObjToStr(super.getAerolineas()) + "\nEmpresas patrocinadoras: " + this.getEmpresas();
+	}
+	
 }

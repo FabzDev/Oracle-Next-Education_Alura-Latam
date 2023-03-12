@@ -1,10 +1,10 @@
 package GestionAeroportuaria_ProyectoPOO;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-	static Scanner ent = new Scanner(System.in);
 	static ArrayList<Aeropuerto> aeropuertos = new ArrayList<>();
 
 	public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Main {
 	}
 
 	public static void insertarDatosAeropuertos() {
-		aeropuertos.add(new AeroPublico("Rionegro", "Medellin", "Colombia", 90_000_000));
+		aeropuertos.add(new AeroPublico("Rionegro", "Medellin", "Colombia", new BigDecimal(90_000_000)));
 		aeropuertos.get(0).insertarAerolinea(new Aerolinea("Avianca"));
 		aeropuertos.get(0).insertarAerolinea(new Aerolinea("Latam"));
 		aeropuertos.get(0).getAerolinea("Avianca")
@@ -46,7 +46,7 @@ public class Main {
 		aeropuertos.get(1).getAerolinea("Ultra").getVuelo("UA2320")
 				.insertarPasajero(new Pasajero("Marcsla Vidalgo", 114910, "Argentiga"));
 
-		aeropuertos.add(new AeroPublico("Ernesto Cortizos", "Barranquilla", "Colombia", 60_000_000));
+		aeropuertos.add(new AeroPublico("Ernesto Cortizos", "Barranquilla", "Colombia", new BigDecimal(60_000_000)));
 		aeropuertos.get(2).insertarAerolinea(new Aerolinea("Wingo"));
 		aeropuertos.get(2).insertarAerolinea(new Aerolinea("otraMas"));
 		aeropuertos.get(2).getAerolinea("Wingo")
@@ -57,7 +57,7 @@ public class Main {
 		aeropuertos.get(2).getAerolinea("Wingo").getVuelo("WO2330")
 				.insertarPasajero(new Pasajero("Marcela Vidalgo", 114010, "Argentina"));
 
-		aeropuertos.add(new AeroPublico("Rafael Nuñez", "Cartagena", "Colombia", 150_000_000));
+		aeropuertos.add(new AeroPublico("Rafael Nuñez", "Cartagena", "Colombia", new BigDecimal(150_000_000)));
 		aeropuertos.get(3).insertarAerolinea(new Aerolinea("Viva Air"));
 		aeropuertos.get(3).getAerolinea("Viva Air")
 				.insertarVuelo(new Vuelo("VR2350", "Cartagena", "Cali", 180_000, 110));
@@ -67,9 +67,47 @@ public class Main {
 				.insertarPasajero(new Pasajero("Paola Vergara", 114012, "Colombiana"));
 	}
 
-	public static void desplegarMenu() {
-		int opcion;
+	public static Aeropuerto encontrarAero(String nombreBusqueda, ArrayList<Aeropuerto> listAeropuertos) {
+		Aeropuerto encontrado = null;
+		for (Aeropuerto aeropuerto : listAeropuertos) {
+			if (nombreBusqueda.equals(aeropuerto.getNombreAereopuerto())) {
+				encontrado = aeropuerto;
+			}
+		}
+		if (encontrado == null) {
+			System.out.println("El aeropuerto ingresado no existe");
+		}
+		return encontrado;
+	}
 
+	public static ArrayList<Vuelo> findArrayVuelos(String nombreAerolinea, ArrayList<Aeropuerto> aeropuertos){
+		ArrayList<Vuelo> encontrado = null;
+		for (Aeropuerto aeropuerto: aeropuertos) {
+			for (Aerolinea aerolinea: aeropuerto.getAerolineas()) {
+				if(nombreAerolinea.equals(aerolinea.getNombreAerolinea()))
+				encontrado = aerolinea.getVuelos();
+			}
+		}
+		return encontrado;
+	}
+	//aqui
+	
+	public static String vuelosToString(ArrayList <Vuelo> vuelos) {
+		ArrayList <String> vuelosList = new ArrayList<String>();
+		for(Vuelo vuelo: vuelos) {
+			vuelosList.add(vuelo.getVueloID());
+		}
+		String[] tempString = vuelosList.toArray(new String[0]);
+		String tempString2 = String.join(", ", tempString);
+		return tempString2;
+	}
+	
+	
+	public static void desplegarMenu() {
+		Scanner scan = new Scanner(System.in);
+		
+		int opcion;
+		String nomBusAero;
 		do {
 			System.out.println("\n\t.:MENU:.");
 			System.out.println("1. Consultar aeropuertos gestionados");
@@ -79,39 +117,74 @@ public class Main {
 			System.out.println("5. Consultar trayecto");
 			System.out.println("6. Salir");
 			System.out.println("\nDigite la opción deseada:");
-			opcion = ent.nextInt();
+			opcion = scan.nextInt();
 
 			switch (opcion) {
-
 			case 1:
 				// Consultar aeropuertos
 				for (Aeropuerto aeropuerto : aeropuertos) {
-					System.out.println(aeropuerto.toString());
+					if (aeropuerto instanceof AeroPrivado) {
+						System.out.println("\nAeropuerto Privado");
+						System.out.println("Nombre: " + aeropuerto.getNombreAereopuerto());
+						System.out.println("Ciudad: " + aeropuerto.getCiudad());
+						System.out.println("País: " + aeropuerto.getPais());
+
+					} else {
+						System.out.println("\nAeropuerto Público");
+						System.out.println("Nombre: " + aeropuerto.getNombreAereopuerto());
+						System.out.println("Ciudad: " + aeropuerto.getCiudad());
+						System.out.println("País: " + aeropuerto.getPais());
+
+					}
 				}
 				break;
 
 			case 2:
-				// Consultar patrocinadores o subvencion
+				// Consultar patrocinadores o subvención
+				for (int i = 0; i < aeropuertos.size(); i++) {
+					if (aeropuertos.get(i) instanceof AeroPrivado) {
+						System.out.println("\nAereopuerto " + aeropuertos.get(i).getNombreAereopuerto());
+						System.out.println(
+								"Empresas patrocinadoras: " + ((AeroPrivado) aeropuertos.get(i)).getEmpresas());
+					} else {
+						System.out.println("\nAereopuerto " + aeropuertos.get(i).getNombreAereopuerto());
+						System.out.println(
+								"Subvención gubernamental: $" + ((AeroPublico) aeropuertos.get(i)).getSubvencion());
+					}
+				}
 				break;
 
 			case 3:
-				// Consultar aerolineas
+				// Consultar aerolineas por aeropuerto
+				Aeropuerto tempAero;
+				System.out.println("Digite el nombre del aeropuerto a consultar: ");
+				String nombreAeropuerto = scan.next();
+				nombreAeropuerto += scan.nextLine();
+				tempAero = encontrarAero(nombreAeropuerto, aeropuertos);
+				System.out.println(tempAero.aerolinesObjToStr(tempAero.getAerolineas()));
 				break;
 
 			case 4:
 				// Consultar vuelos
-
-				break;
+				System.out.println("Ingrese la aerolinea a consultar: ");
+				String nombreAerolinea = scan.next();
+				ArrayList <Vuelo> vueloTemp = findArrayVuelos(nombreAerolinea, aeropuertos);
+				System.out.println(vuelosToString(vueloTemp));
+				
 
 			case 5:
 				// Consultar trayecto
 				break;
 
 			case 6:
+				System.out.println("Hasta pronto");
 				break;
 
+			default:
+				System.out.println("Opción incorrecta");
+
 			}
-		} while (opcion != 7);
+		} while (opcion != 6);
 
 	}
 }

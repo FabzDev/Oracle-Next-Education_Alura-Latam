@@ -22,6 +22,10 @@ public class Aeropuerto {
 		this.aerolineas = aerolineas;
 	}
 
+	public Aeropuerto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void insertarAerolinea(Aerolinea aerolinea) {
 		aerolineas.add(aerolinea);
 	}
@@ -56,18 +60,15 @@ public class Aeropuerto {
 		return encontrado;
 	}
 
-	@Override
-	public String toString() {
-		return "\nAereopuerto: " + nombreAereopuerto +"\nCiudad: " + ciudad + "\nPaís: " + pais + "\nAerolineas: "
-				+ testString(aerolineas);
-	}
 	
-	public ArrayList <String> testString(ArrayList <Aerolinea> aerolines) {
+	public String aerolinesObjToStr(ArrayList <Aerolinea> aerolines) {
 		ArrayList <String> aerolineList = new ArrayList<String>();
 		for(Aerolinea aeroline: aerolines) {
 			aerolineList.add(aeroline.getNombreAerolinea());
 		}
-		return aerolineList;
+		String[] tempString = aerolineList.toArray(new String[0]);
+		String tempString2 = String.join(", ", tempString);
+		return tempString2;
 	}
 //PENDING!
 }

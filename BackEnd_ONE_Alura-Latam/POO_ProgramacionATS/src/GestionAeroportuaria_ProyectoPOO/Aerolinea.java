@@ -27,8 +27,8 @@ public class Aerolinea {
 		return nombreAerolinea;
 	}
 	
-	public int getCantVuelos() {
-		return cantVuelos;
+	public ArrayList <Vuelo> getVuelos() {
+		return vuelos;
 	}
 	
 	public Vuelo getVueloIndex(int indexVuelo) {
