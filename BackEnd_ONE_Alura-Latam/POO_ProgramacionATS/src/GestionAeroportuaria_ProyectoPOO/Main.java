@@ -90,7 +90,7 @@ public class Main {
 		}
 		return encontrado;
 	}
-	//aqui
+	
 	
 	public static String vuelosToString(ArrayList <Vuelo> vuelos) {
 		ArrayList <String> vuelosList = new ArrayList<String>();
@@ -100,6 +100,22 @@ public class Main {
 		String[] tempString = vuelosList.toArray(new String[0]);
 		String tempString2 = String.join(", ", tempString);
 		return tempString2;
+	}
+	
+	
+	public static ArrayList<Vuelo> encontrarVuelos(String orig, String dest, ArrayList <Aeropuerto> aeropuertos) {
+		ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
+		for (Aeropuerto aeropuerto:aeropuertos) {
+			for (Aerolinea aerolinea:aeropuerto.getAerolineas()) {
+				for (Vuelo vuelo:aerolinea.getVuelos()) {
+					if(vuelo.getOrigin().equals(orig) && vuelo.getDestino().equals(dest)) {
+					vuelosEncontrados.add(vuelo);
+					System.out.println(vuelosEncontrados);;
+				}
+			}
+		}
+	}
+	return vuelosEncontrados;
 	}
 	
 	
@@ -173,7 +189,18 @@ public class Main {
 				
 
 			case 5:
-				// Consultar trayecto
+				// Consultar trayecto:
+				// iterar aeropuerto
+				// iterar aerolineas (arraylist)
+				// iterar vuelos (arraylist)
+				// verificar si ciudad de origen es la deseada
+				// verificar si ciudad de destino es la deseada
+				// devolver vuelo (obj)
+				ArrayList <Vuelo> vuelosEncontrados = encontrarVuelos("Cartagena","Cali", aeropuertos);
+				for(Vuelo vuelo: vuelosEncontrados) {
+					System.out.println("Vuelo ID: " + vuelo.getVueloID() + ", origen: " + vuelo.getOrigin() + ", destino: " + vuelo.getDestino() + ", precio: $" + vuelo.getPrecio());
+				}
+				
 				break;
 
 			case 6:
