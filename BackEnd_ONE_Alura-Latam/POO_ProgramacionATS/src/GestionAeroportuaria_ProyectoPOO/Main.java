@@ -50,7 +50,7 @@ public class Main {
 		aeropuertos.get(2).insertarAerolinea(new Aerolinea("Wingo"));
 		aeropuertos.get(2).insertarAerolinea(new Aerolinea("otraMas"));
 		aeropuertos.get(2).getAerolinea("Wingo")
-				.insertarVuelo(new Vuelo("WO2330", "Medellín", "Barranquilla", 160_000, 120));
+				.insertarVuelo(new Vuelo("WO2330", "Barranquilla", "Medellín", 160_000, 120));
 		aeropuertos.get(2).getAerolinea("Wingo").insertarVuelo(new Vuelo("WO2331", "Medellín", "Bogotá", 90_000, 120));
 		aeropuertos.get(2).getAerolinea("Wingo").getVuelo("WO2330")
 				.insertarPasajero(new Pasajero("Yailin Hernandez", 114009, "Puertoriqueña"));
@@ -80,48 +80,48 @@ public class Main {
 		return encontrado;
 	}
 
-	public static ArrayList<Vuelo> findArrayVuelos(String nombreAerolinea, ArrayList<Aeropuerto> aeropuertos){
+	public static ArrayList<Vuelo> findArrayVuelos(String nombreAerolinea, ArrayList<Aeropuerto> aeropuertos) {
 		ArrayList<Vuelo> encontrado = null;
-		for (Aeropuerto aeropuerto: aeropuertos) {
-			for (Aerolinea aerolinea: aeropuerto.getAerolineas()) {
-				if(nombreAerolinea.equals(aerolinea.getNombreAerolinea()))
-				encontrado = aerolinea.getVuelos();
+		for (Aeropuerto aeropuerto : aeropuertos) {
+			for (Aerolinea aerolinea : aeropuerto.getAerolineas()) {
+				if (nombreAerolinea.equals(aerolinea.getNombreAerolinea()))
+					encontrado = aerolinea.getVuelos();
 			}
 		}
 		return encontrado;
 	}
-	
-	
-	public static String vuelosToString(ArrayList <Vuelo> vuelos) {
-		ArrayList <String> vuelosList = new ArrayList<String>();
-		for(Vuelo vuelo: vuelos) {
+
+	public static String vuelosToString(ArrayList<Vuelo> vuelos) {
+		ArrayList<String> vuelosList = new ArrayList<String>();
+		for (Vuelo vuelo : vuelos) {
 			vuelosList.add(vuelo.getVueloID());
 		}
 		String[] tempString = vuelosList.toArray(new String[0]);
 		String tempString2 = String.join(", ", tempString);
 		return tempString2;
 	}
-	
-	
-	public static ArrayList<Vuelo> encontrarVuelos(String orig, String dest, ArrayList <Aeropuerto> aeropuertos) {
+
+	public static ArrayList<Vuelo> encontrarVuelos(String orig, String dest, ArrayList<Aeropuerto> aeropuertos) {
 		ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
-		for (Aeropuerto aeropuerto:aeropuertos) {
-			for (Aerolinea aerolinea:aeropuerto.getAerolineas()) {
-				for (Vuelo vuelo:aerolinea.getVuelos()) {
-					if(vuelo.getOrigin().equals(orig) && vuelo.getDestino().equals(dest)) {
-					vuelosEncontrados.add(vuelo);
-					System.out.println(vuelosEncontrados);;
+		boolean encontrado = false;
+		for (Aeropuerto aeropuerto : aeropuertos) {
+			for (Aerolinea aerolinea : aeropuerto.getAerolineas()) {
+				for (Vuelo vuelo : aerolinea.getVuelos()) {
+					if (vuelo.getOrigin().equals(orig) && vuelo.getDestino().equals(dest)) {
+						vuelosEncontrados.add(vuelo);
+					}
 				}
 			}
 		}
+		if (!encontrado) {
+			System.out.println("\nLo sentimos, en este momentos no tenemos vuelos disponibles para tu trayecto");
+		}
+		return vuelosEncontrados;
 	}
-	return vuelosEncontrados;
-	}
-	
-	
+
 	public static void desplegarMenu() {
 		Scanner scan = new Scanner(System.in);
-		
+
 		int opcion;
 		String nomBusAero;
 		do {
@@ -184,23 +184,25 @@ public class Main {
 				// Consultar vuelos
 				System.out.println("Ingrese la aerolinea a consultar: ");
 				String nombreAerolinea = scan.next();
-				ArrayList <Vuelo> vueloTemp = findArrayVuelos(nombreAerolinea, aeropuertos);
+				ArrayList<Vuelo> vueloTemp = findArrayVuelos(nombreAerolinea, aeropuertos);
 				System.out.println(vuelosToString(vueloTemp));
-				
+				break;
 
 			case 5:
 				// Consultar trayecto:
-				// iterar aeropuerto
-				// iterar aerolineas (arraylist)
-				// iterar vuelos (arraylist)
-				// verificar si ciudad de origen es la deseada
-				// verificar si ciudad de destino es la deseada
-				// devolver vuelo (obj)
-				ArrayList <Vuelo> vuelosEncontrados = encontrarVuelos("Cartagena","Cali", aeropuertos);
-				for(Vuelo vuelo: vuelosEncontrados) {
-					System.out.println("Vuelo ID: " + vuelo.getVueloID() + ", origen: " + vuelo.getOrigin() + ", destino: " + vuelo.getDestino() + ", precio: $" + vuelo.getPrecio());
+				System.out.println("\nIngrese la ciudad de origen: ");
+				String origen = scan.next();
+
+				System.out.println("\nIngrese la ciudad de destino: ");
+				String destino = scan.next();
+
+				ArrayList<Vuelo> vuelosEncontrados = encontrarVuelos(origen, destino, aeropuertos);
+				for (Vuelo vuelo : vuelosEncontrados) {
+					System.out.println("\nVuelos de " + origen + " a " + destino + ": ");
+					System.out.println("Vuelo ID: " + vuelo.getVueloID() + ", origen: " + vuelo.getOrigin()
+							+ ", destino: " + vuelo.getDestino() + ", precio: $" + vuelo.getPrecio());
 				}
-				
+
 				break;
 
 			case 6:
