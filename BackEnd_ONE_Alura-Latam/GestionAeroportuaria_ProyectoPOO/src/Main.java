@@ -38,7 +38,7 @@ public class Main {
 				.insertarPasajero(new Pasajero("Roberto Hernandez", 114005, "Mexicano"));
 
 		aeropuertos.add(new AeroPrivado("El Dorado", "Bogotá", "Colombia"));
-		String[] empresas = { "Apple", "Alibaba", "Amazon" };
+		String[] empresas = { "Apple", "Alibaba", "Amazon", "Mercadolibre" };
 		((AeroPrivado) aeropuertos.get(1)).insertarEmpresas(empresas);
 		aeropuertos.get(1).insertarAerolinea(new Aerolinea("Ultra"));
 		aeropuertos.get(1).getAerolinea("Ultra")
