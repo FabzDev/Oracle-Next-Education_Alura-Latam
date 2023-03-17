@@ -1,4 +1,4 @@
-package GestionAeroportuaria_ProyectoPOO;
+
 
 public class Pasajero {
 	private String nombrePasajero;

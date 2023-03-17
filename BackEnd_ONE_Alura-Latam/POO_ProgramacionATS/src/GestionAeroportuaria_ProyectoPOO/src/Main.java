@@ -1,4 +1,4 @@
-package GestionAeroportuaria_ProyectoPOO;
+
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -206,7 +206,7 @@ public class Main {
 				break;
 
 			case 6:
-				System.out.println("Hasta pronto");
+				System.out.println("\nHasta pronto");
 				break;
 
 			default:
